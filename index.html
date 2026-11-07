@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Ani</title>
+
+<style>
+body{
+    margin:0;
+    background:#ff6b81;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+#count{
+    font-size:150px;
+    margin-top:150px;
+}
+
+#cake,#final{
+    display:none;
+}
+
+img{
+    width:300px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="count">3</div>
+
+<div id="cake">
+    <h1>🎉 Happy Birthday Ani 🎉</h1>
+    <h1 id="flame">🕯️</h1>
+    <h1>🎂</h1>
+
+    <button onclick="blow()">Blow Candle 💨</button>
+</div>
+
+<div id="final">
+    <h1>✨ ANI ✨</h1>
+
+    <img src="ani.jpg">
+
+    <h2>
+        Whatever you can do,<br>
+        wherever life takes you,<br>
+        I will always stand with you as a friend.<br><br>
+
+        Happy Birthday, Ani! ❤️🎂
+    </h2>
+</div>
+
+<script>
+
+let n=3;
+
+let timer=setInterval(function(){
+
+document.getElementById("count").innerHTML=n;
+
+n--;
+
+if(n<0){
+clearInterval(timer);
+
+document.getElementById("count").style.display="none";
+document.getElementById("cake").style.display="block";
+}
+
+},1000);
+
+function blow(){
+
+document.getElementById("flame").innerHTML="";
+
+setTimeout(function(){
+
+document.getElementById("cake").style.display="none";
+document.getElementById("final").style.display="block";
+
+},1000);
+
+}
+
+</script>
+
+</body>
+</html>
